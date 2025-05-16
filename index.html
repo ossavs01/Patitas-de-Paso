@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patitas de Paso</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/estilos/footer.css">
+  <link rel="icon" href="/img/Logo.png" type="">
+
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+<body>
+  <div id="navbar"></div>
+  <div class="grid-container" id="slider"></div>
+  <div id="servicios"></div>
+  <div id="graficabarra"></div>
+  <div id="gatos"></div>
+  <div id="calcular"></div>
+  <div id="card"></div>
+
+
+
+
+
+
+
+  <footer>
+
+    <div class="container-general">
+
+      <div class="footer-content1">
+        <ul class="list">
+          <li class="redes">
+            <a class="ancla" href="https://www.facebook.com/share/15G8Cwen1m/?mibextid=wwXIfr">
+              <img class="face-icono" src="/img/facebook.png" alt="">
+              <span>- Facebook</span>
+            </a>
+          </li>
+
+          <li class="redes">
+            <a class="ancla" href="https://www.tiktok.com/@patitas_de_paso_of?_t=ZS-8wLMagA58Rm&_r=1">
+              <img class="face-icono" src="/img/Tiktok.png" alt="">
+              <span>- TitTok</span>
+            </a>
+          </li>
+
+          <li class="redes">
+            <a class="ancla" href="https://www.instagram.com/patitas_de_paso?igsh=Nm5hZWx1a2IxZms0&utm_source=qr">
+              <img class="face-icono" src="/img/Insta.png" alt="">
+              <span>- Instagram</span>
+            </a>
+          </li>
+
+          <li class="redes">
+            <a class="ancla" href="http://wa.me/+573108382374">
+              <img class="face-icono" src="/img/whatsapp.png" alt="">
+              <span>- WhatsApp</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-content2">
+        <p class="copi">©2025.Faber Ossa and John Ossa</p>
+      </div>
+    </div>
+
+
+  </footer>
+
+  <script>
+    fetch("componentes/navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/navbar.css";
+        document.head.appendChild(css);
+        const script = document.createElement("script");
+        script.src = "scripts/navbar.js";
+        document.body.appendChild(script);
+
+      });
+
+    fetch("componentes/slider.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("slider").innerHTML = data;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/slider.css";
+        document.head.appendChild(css);
+        const script = document.createElement("script");
+        script.src = "scripts/slider.js";
+        document.body.appendChild(script);
+      });
+
+    fetch("componentes/servicios.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("servicios").innerHTML = data;
+
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/servicios.css";
+        document.head.appendChild(css);
+
+        // Ejecutar JS justo después de que el HTML ya está en el DOM
+        const items = document.querySelectorAll(".carrusel-item");
+        const next = document.getElementById('next');
+        const prev = document.getElementById('prev');
+
+        let active = 0;
+
+        function loadShow() {
+          let stt = 0;
+
+          items.forEach((item, index) => {
+            item.style.opacity = 0;
+            item.style.zIndex = 0;
+            item.style.transform = "scale(0.8)";
+            item.style.filter = "blur(5px)";
+          });
+
+          items[active].style.transform = 'none';
+          items[active].style.zIndex = 1;
+          items[active].style.filter = 'none';
+          items[active].style.opacity = 1;
+
+          for (let i = active + 1; i < items.length; i++) {
+            stt++;
+            items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt})`;
+            items[i].style.zIndex = -stt;
+            items[i].style.filter = 'blur(5px)';
+            items[i].style.opacity = stt > 2 ? 0 : 0.6;
+          }
+
+          stt = 0;
+
+          for (let i = active - 1; i >= 0; i--) {
+            stt++;
+            items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt})`;
+            items[i].style.zIndex = -stt;
+            items[i].style.filter = 'blur(5px)';
+            items[i].style.opacity = stt > 2 ? 0 : 0.6;
+          }
+        }
+
+        next.onclick = function () {
+          if (active < items.length - 1) {
+            active++;
+            loadShow();
+          }
+        };
+
+        prev.onclick = function () {
+          if (active > 0) {
+            active--;
+            loadShow();
+          }
+        };
+
+        loadShow();
+      });
+
+
+    fetch("componentes/graficap.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("graficabarra").innerHTML = data;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/graficap.css";
+        document.head.appendChild(css);
+        const script = document.createElement("script");
+        script.src = "scripts/graficap.js";
+        document.body.appendChild(script);
+
+
+        const años = [
+          '2000', '2001', '2003', '2004', '2006', '2007', '2008', '2009', '2010',
+          '2011', '2012', '2013', '2014', '2015', '2016', '2018', '2019',
+          '2020', '2021', '2022', '2024', '2025'
+        ];
+
+        const cantidades = [1, 1, 3, 3, 2, 2, 1, 6, 3, 6, 2, 3, 2, 7, 3, 2, 1, 3, 1, 3, 1, 1];
+
+        const colores = cantidades.map(c => c <= 3 ? 'blue' : 'rgba(54, 162, 235, 0.7)');
+
+        // === GRÁFICA DE BARRAS ===
+        const ctx = document.getElementById('graficaBarras').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: años,
+            datasets: [{
+              label: 'Razas de Perros Reconocidas por año',
+              data: cantidades,
+              backgroundColor: colores,
+              borderColor: colores,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    const value = context.raw;
+                    const data = context.dataset.data;
+                    const total = data.reduce((acc, curr) => acc + curr, 0);
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    return `${value} razas (${percentage}%)`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: { beginAtZero: true }
+            }
+          }
+        });
+
+
+
+        // === GRÁFICA DE TORTA ===
+        const ctxTorta = document.getElementById('graficaTorta').getContext('2d');
+        new Chart(ctxTorta, {
+          type: 'pie',
+          data: {
+            labels: años,
+            datasets: [{
+              label: 'Distribución de Razas por Año',
+              data: cantidades,
+              backgroundColor: colores,
+              borderColor: '#fff',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'right'
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    const value = context.raw; // cantidad de ese segmento
+                    const data = context.dataset.data;
+                    const total = data.reduce((acc, curr) => acc + curr, 0);
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    return `${value} razas (${percentage}%)`;
+                  }
+                }
+              }
+            }
+          }
+        });
+
+      });
+
+
+    fetch("componentes/graficag.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("gatos").innerHTML = data;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/graficag.css";
+        document.head.appendChild(css);
+        const script = document.createElement("script");
+        script.src = "scripts/graficag.js";
+        document.body.appendChild(script);
+
+        // === Datos para Gatos ===
+        const añosGatos = [
+          '2000', '2001', '2002', '2003', '2004', '2005', '2006',
+          '2007', '2008', '2009', '2010', '2011', '2012', '2013',
+          '2014', '2015', '2016', '2017', '2018', '2019', '2020',
+          '2021', '2022', '2023', '2024', '2025'
+        ];
+
+        const cantidadesGatos = [
+          0, 0, 0, 0, 1, 1, 1,
+          0, 1, 0, 1, 1, 0, 0,
+          0, 1, 0, 1, 1, 1, 0,
+          0, 1, 1, 1, 1
+        ];
+
+        const coloresGatos = cantidadesGatos.map(c =>
+          c === 0 ? 'lightgray' : 'rgba(153, 102, 255, 0.7)'
+        );
+
+        // === Gráfica de Barras Gatos ===
+        const ctxBarrasGatos = document.getElementById('graficaBarrasGatos').getContext('2d');
+        new Chart(ctxBarrasGatos, {
+          type: 'bar',
+          data: {
+            labels: añosGatos,
+            datasets: [{
+              label: 'Razas de Gatos Reconocidas por Año',
+              data: cantidadesGatos,
+              backgroundColor: coloresGatos,
+              borderColor: coloresGatos,
+              borderWidth: 1,
+              barThickness: 10
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    const value = context.raw;
+                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    return `${value} razas (${percentage}%)`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: { beginAtZero: true },
+              x: {
+                ticks: {
+                  autoSkip: false,
+                  maxRotation: 90,
+                  minRotation: 45
+                }
+              }
+            }
+          }
+        });
+
+        // === Gráfica de Torta Gatos ===
+        const ctxTortaGatos = document.getElementById('graficaTortaGatos').getContext('2d');
+        new Chart(ctxTortaGatos, {
+          type: 'pie',
+          data: {
+            labels: añosGatos,
+            datasets: [{
+              data: cantidadesGatos,
+              backgroundColor: coloresGatos,
+              borderColor: '#fff',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: 'right' },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    const value = context.raw;
+                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    return `${value} razas (${percentage}%)`;
+                  }
+                }
+              }
+            }
+          }
+        });
+
+      });
+
+    fetch("componentes/calculadora.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("calcular").innerHTML = data;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/calculadora.css";
+        document.head.appendChild(css);
+        let total = 0;
+        const precios = {
+          cumpleaños: 45000,
+          guarderia: 25000,  // Se cobrará por día
+          paseos: 10000,
+          spa: 80000
+        };
+
+        const listaServicios = document.getElementById("listaServicios");
+
+        document.getElementById("servicio").addEventListener("change", actualizarMensaje);
+        document.getElementById("dias").addEventListener("input", actualizarMensaje);
+
+        function actualizarMensaje() {
+          let servicio = document.getElementById("servicio").value;
+          let mensaje = `Servicio seleccionado: ${servicio.charAt(0).toUpperCase() + servicio.slice(1)} - Precio: `;
+
+          if (servicio === "guarderia") {
+            let dias = parseInt(document.getElementById("dias").value);
+            mensaje += `$${precios[servicio]} por día (${dias} días = $${precios[servicio] * dias})`;
+            document.getElementById("diasContainer").style.display = "block";
+          } else {
+            mensaje += `$${precios[servicio]}`;
+            document.getElementById("diasContainer").style.display = "none";
+          }
+
+          document.getElementById("mensaje").innerText = mensaje;
+        }
+
+        document.getElementById("opcion1").addEventListener("click", function () {
+          let servicio = document.getElementById("servicio").value;
+          let costo = precios[servicio];
+          let descripcion = servicio.charAt(0).toUpperCase() + servicio.slice(1);
+
+          if (servicio === "guarderia") {
+            let dias = parseInt(document.getElementById("dias").value);
+            costo *= dias;
+            descripcion += ` (${dias} días)`;
+          }
+
+          total += costo;
+          document.getElementById("total").innerText = total;
+
+          let nuevoServicio = document.createElement("li");
+          nuevoServicio.innerHTML = `${descripcion} - $${costo} <button class="eliminar">X</button>`;
+
+          nuevoServicio.querySelector(".eliminar").addEventListener("click", function () {
+            total -= costo;
+            document.getElementById("total").innerText = total;
+            listaServicios.removeChild(nuevoServicio);
+          });
+
+          listaServicios.appendChild(nuevoServicio);
+
+          alert("Servicio agregado. ¿Desea escoger otro?");
+        });
+
+        document.getElementById("opcion2").addEventListener("click", function () {
+          alert("Servicio no agregado. Puede elegir otro si lo desea.");
+        });
+
+        document.getElementById("finalizarCompra").addEventListener("click", function () {
+          if (total > 0) {
+            alert(`Total a pagar: $${total}`);
+          } else {
+            alert("No has seleccionado ningún servicio.");
+          }
+        });
+      });
+
+
+    fetch("componentes/presentacion.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("card").innerHTML = data;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/presentacion.css";
+        document.head.appendChild(css);
+        const script = document.createElement("script");
+        script.src = "scripts/presentacion.js";
+        document.body.appendChild(script);
+
+      });
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>

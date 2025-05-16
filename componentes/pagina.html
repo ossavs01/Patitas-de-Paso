@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/estilos/navbar.css">
+<nav class="navbar">
+    <div class="logo">
+        <img src="/img/Logo.png" alt="logo">
+        <h1>Guardería de Mascotas</h1>
+    </div>
+    <ul class="menu">
+        <li id="menu"><a href="/index.html">Inicio</a></li>
+        <li id="quienes-menu" class="submenu">
+            <a href="#">Quienes Somos</a>
+            <ul id="submenu-quienes">
+            <li><a href="/componentes/Mision.html"><img src="/img/mision.png" alt="#">Misión</a></li>
+               <li><a href="/componentes/Vision.html"><img src="/img/vision.png" alt="#">Visión</a></li>
+               <li><a href="/componentes/Historia.html"><img src="/img/NH.png" alt="#">Nuestra Historia</a></li>
+            </ul>
+        </li>
+        <li id="redes-menu" class="submenu">
+            <a href="#">Redes Sociales</a>
+            <ul id="submenu-redes">
+                <li><a href="#"><img src="/img/WhatsApp.png" alt="#">WhatsApp</a></li>
+                <li><a href="https://web.facebook.com/profile.php?id=61574675970599"><img src="/img/facebook.png" alt="#">Facebook</a></li>
+                <li><a href="https://goo.su/OcGf5n"><img src="/img/insta.png" alt="#">Instagram</a></li>
+                <li><a href="https://goo.su/skz5PP"><img src="/img/Tiktok.png" alt="#">TikTok</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+
+
+<link rel="stylesheet" href="/estilos/pagina.css">
+<h1>Mas información</h1>
+
+<div class="cards">
+    <div class="card red">
+        <a href="/componentes/razasp.html"><p class="tip">Razas Descubiertas Por Año</p></a>
+    </div>
+    <div class="card blue">
+        <a href="/componentes/ppp.html"><p class="tip">Perros Potencialmente Peligrosos (PPP)</p></a>
+    </div>
+    <div class="card green">
+        <a href="/componentes/datos.html"><p class="tip">Datos Curiosos</p></a>
+    </div>
+</div>
+
+<script>
+       fetch("componentes/navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "estilos/navbar.css";
+        document.head.appendChild(css);
+        const script = document.createElement("script");
+        script.src = "scripts/navbar.js";
+        document.body.appendChild(script);
+
+      });
+</script>

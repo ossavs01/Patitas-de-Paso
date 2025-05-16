@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="/estilos/navbar.css">
+<nav class="navbar">
+    <div class="logo">
+        <img src="/img/Logo.png" alt="logo">
+        <h1>Guardería de Mascotas</h1>
+    </div>
+    <ul class="menu">
+        <li id="menu"><a href="/index.html">Inicio</a></li>
+        <li id="quienes-menu" class="submenu">
+            <a href="#">Quienes Somos</a>
+            <ul id="submenu-quienes">
+            <li><a href="/componentes/Mision.html"><img src="/img/mision.png" alt="#">Misión</a></li>
+               <li><a href="/componentes/Vision.html"><img src="/img/vision.png" alt="#">Visión</a></li>
+               <li><a href="/componentes/Historia.html"><img src="/img/NH.png" alt="#">Nuestra Historia</a></li>
+            </ul>
+        </li>
+        <li id="redes-menu" class="submenu">
+            <a href="#">Redes Sociales</a>
+            <ul id="submenu-redes">
+                <li><a href="#"><img src="img/WhatsApp.png" alt="#">WhatsApp</a></li>
+                <li><a href="https://web.facebook.com/profile.php?id=61574675970599"><img src="img/facebook.png" alt="#">Facebook</a></li>
+                <li><a href="https://goo.su/OcGf5n"><img src="img/insta.png" alt="#">Instagram</a></li>
+                <li><a href="https://goo.su/skz5PP"><img src="img/Tiktok.png" alt="#">TikTok</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<link rel="stylesheet" href="/estilos/datos.css">
+<div class="sabueso-box">
+    <h2>¿Sabías que? — Historia del Sabueso Fino Colombiano</h2>
+
+    <p>
+        El <strong>Sabueso Fino Colombiano</strong> es la única raza canina originaria de Colombia. Fue reconocido
+        oficialmente
+        en 2015 por el <strong>Club Canino Colombiano</strong>, luego de una exhaustiva investigación realizada entre
+        2013 y 2015
+        con el apoyo de la <strong>Universidad Nacional de Colombia</strong>. Esta investigación permitió su censo,
+        caracterización
+        y registro oficial como patrimonio genético nacional.
+    </p>
+
+    <p>
+        Su historia se remonta a la <strong>época de la Conquista</strong>, cuando los españoles introdujeron sabuesos
+        traídos de Europa
+        para actividades de caza. Con el paso del tiempo, estos perros se cruzaron con razas como el <strong>sabueso
+            español</strong>,
+        el <strong>bleu de Gascogne</strong>, el <strong>bloodhound</strong> inglés y los <strong>coonhounds</strong>
+        norteamericanos.
+        Al mezclarse con perros criollos locales, se desarrolló un perro de caza robusto, resistente y bien adaptado al
+        terreno colombiano.
+    </p>
+
+    <h3>Características físicas</h3>
+    <ul>
+        <li><strong>Tamaño:</strong> Mediano a grande (45–55 cm de altura a la cruz)</li>
+        <li><strong>Peso:</strong> 20 a 35 kg</li>
+        <li><strong>Pelaje:</strong> Corto, denso, generalmente tricolor (negro, blanco y fuego)</li>
+        <li><strong>Orejas:</strong> Largas y caídas, similares a las del bloodhound</li>
+        <li><strong>Cola:</strong> Gruesa y de inserción media</li>
+    </ul>
+
+    <h3>Temperamento y personalidad</h3>
+    <p>
+        El sabueso fino colombiano es un perro <strong>inteligente, leal y cariñoso</strong> con su familia. Tiene un
+        carácter fuerte en el campo,
+        donde es <strong>tenaz, valiente y muy enfocado en el rastro</strong>. Pero también es conocido por su
+        <strong>paciencia con niños y adultos mayores</strong>.
+        Es un perro equilibrado que puede vivir en familia, siempre que reciba el ejercicio necesario.
+    </p>
+
+    <h3>Habilidades y usos</h3>
+    <p>
+        Tradicionalmente usado para la <strong>caza de mamíferos pequeños</strong> como armadillos, zarigüeyas o
+        guaguas,
+        destaca por su <strong>olfato extremadamente desarrollado</strong>. Su capacidad de seguir rastros por horas lo
+        convierte
+        en un sabueso de primer nivel. Hoy en día también se le aprecia como perro de compañía en zonas rurales y
+        fincas.
+    </p>
+
+    <h3>Zonas de mayor presencia</h3>
+    <p>
+        La raza está más desarrollada en regiones como <strong>Boyacá</strong>, los <strong>Llanos Orientales</strong>,
+        <strong>Antioquia</strong> y <strong>Córdoba</strong>, donde se han identificado núcleos genéticos importantes.
+    </p>
+
+    <h3>Estado actual</h3>
+    <p>
+        Aunque aún no está reconocido por la <strong>Federación Cinológica Internacional (FCI)</strong>, el sabueso fino
+        colombiano
+        es considerado una <strong>raza en proceso de consolidación</strong>. Diversos criadores y entidades están
+        trabajando para preservar
+        y promover sus cualidades como patrimonio nacional.
+    </p>
+
+    <div class="galeria-sabueso">
+        <img src="/img/sabu.jfif" alt="#">
+        <img src="/img/sabu1.jfif" alt="Sabueso Fino de frente">
+        <img src="/img/sabu2.jfif" alt="Sabueso descansando">
+        <img src="/img/sabu4.jfif" alt="Sabueso en la caza">
+    </div>
+</div>
+
+<script>
+    fetch("componentes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+            const css = document.createElement("link");
+            css.rel = "stylesheet";
+            css.href = "estilos/navbar.css";
+            document.head.appendChild(css);
+            const script = document.createElement("script");
+            script.src = "scripts/navbar.js";
+            document.body.appendChild(script);
+
+        });
+</script>

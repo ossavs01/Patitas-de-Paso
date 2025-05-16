@@ -1,0 +1,32 @@
+
+
+<link rel="stylesheet" href="/estilos/calculadora.css">
+
+<div class="calculadora">
+    <h2 class="calcu">Seleccione un servicio</h2>
+    <select id="servicio">
+        <option value="cumpleaños">Festejación de cumpleaños - $45.000</option>
+        <option value="guarderia">Guardería y Hotel - $25.000/día</option>
+        <option value="paseos">Paseos - $10.000</option>
+        <option value="spa">Spa - $80.000</option>
+    </select>
+
+    <div id="diasContainer" style="display: none;">
+        <label for="dias">Cantidad de días:</label>
+        <input type="number" id="dias" min="1" value="1">
+    </div>
+
+    <p id="mensaje"></p>
+
+    <button id="opcion1">Escoger servicio</button>
+    <button id="opcion2">No escoger</button>
+
+    <h3>Total a pagar: $<span id="total">0</span></h3>
+
+    <h4>Servicios seleccionados:</h4>
+    <ul id="listaServicios"></ul>
+
+    <button id="finalizarCompra">Finalizar compra</button>
+</div>
+
+<script src="/js/calculadora.js"></script>

@@ -1,0 +1,80 @@
+.grid-container-graficag {
+    display: flex;
+    grid-template-columns: repeat(2, max-content);
+    align-items: start;
+    gap: 20px;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.grafica-container {
+  padding: 20px;
+  background-color: #ededed;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  
+}
+.grafica3 {
+  width: 48%;
+}
+
+.grafica4 {
+  width: 30%;
+}
+
+.principal2 {
+  text-align: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+ 
+}
+
+canvas {
+  max-width: none;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.bot-2 {
+ justify-content: center;
+  text-align: center;
+  max-width: 160px;
+  width: auto;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px) ;
+  color: white;
+  padding: 6px 8px;
+  border: 1px (255. 255. 255, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.boto {
+  color: rgb(14, 4, 4);
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+.bot-2:hover {
+  color: rgb(190, 6, 241);
+}
+
+.bot-2:active {
+  transform: scale(1);
+  box-shadow: 0 2px 4px rgb(209, 2, 255);
+}

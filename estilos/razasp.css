@@ -1,0 +1,70 @@
+.titulo-perros{
+    text-align: center;
+    color: #2c3e50;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.2rem;
+    margin: 40px 0 20x 0;
+    
+}
+
+.perros-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.raza{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 1);
+    padding: 18px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.raza img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.raza h2{
+    font-size: 1.1rem;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.año{ 
+    font-size: 12px;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.raza > div{
+    margin-bottom: 22px;
+}
+
+.raza h3{
+    font-size: 1rem;
+    color: #2d7f65;
+    margin-bottom: 8px;
+    border-left: 4px dolid #2d7f65;
+    padding-left: 10px;
+}
+
+.raza p{ 
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: black;
+    margin-left: 5px;
+}

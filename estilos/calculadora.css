@@ -1,0 +1,106 @@
+.calcu {
+    padding-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(114, 154, 180);
+    font-size: 30px;
+}
+
+#servicio {
+    color: rgb(3, 69, 120);
+}
+
+#listaServicios {   
+    list-style: none;
+    padding: 0;
+}
+
+#diasContainer{
+    margin: 10px;
+}
+
+#listaServicios li {
+    background-color: #444;
+    color: white;
+    padding: 5px 30px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.eliminar {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;    
+    margin-left: 80px;
+}
+
+.eliminar:hover {
+    background-color: darkred;
+}
+
+.calculadora {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+#opcion1 {    
+  margin: 5px;
+  font-size: 1rem;
+  padding: 0.8em 2em;
+  background-color: #000;
+  border: 3px solid rgb(17, 173, 204);
+  border-radius: 1em;
+  color: #fff;
+  font-weight: bolder;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px rgb(11, 118, 145);
+}
+
+#opcion1:hover {
+  transform: translate(5px, -5px);
+}
+
+#opcion2 {    
+  margin: 15px;
+  font-size: 1rem;
+  padding: 0.8em 2em;
+  background-color: #000;
+  border: 3px solid rgb(17, 173, 204);
+  border-radius: 1em;
+  color: #fff;
+  font-weight: bolder;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px rgb(11, 118, 145);
+}
+
+#opcion2:hover {
+  transform: translate(5px, -5px);
+}
+
+#finalizarCompra {    
+  margin: 5px;
+  font-size: 1rem;
+  padding: 0.8em 2em;
+  background-color: #000;
+  border: 3px solid rgb(17, 173, 204);
+  border-radius: 1em;
+  color: #fff;
+  font-weight: bolder;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px rgb(11, 118, 145);
+  margin-bottom: 50px;
+}
+
+#finalizarCompra:hover {
+  transform: translate(5px, -5px);
+}
+    
